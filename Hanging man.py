@@ -1,23 +1,21 @@
 #this is ganna be a fun code cuzz its hanging man game
 hangman = ['''
-  +---+
-  |   |
-      |
-      |
-      |
-      |
-=========''', '''
-  +---+
++---+
   |   |
   O   |
-      |
-      |
+ /|\  |
+ / \  |
       |
 =========''', '''
-  +---+
   |   |
   O   |
-  |   |
+ /|\  |
+ /    |
+      |
+=========''', '''
+ |   |
+  O   |
+ /|\  |
       |
       |
 =========''', '''
@@ -28,26 +26,27 @@ hangman = ['''
       |
       |
 =========''', '''
-  +---+
+ +---+
   |   |
   O   |
- /|\  |
+  |   |
       |
       |
 =========''', '''
   +---+
   |   |
   O   |
- /|\  |
- /    |
+      |
+      |
       |
 =========''', '''
   +---+
   |   |
-  O   |
- /|\  |
- / \  |
       |
+      |
+      |
+      |
+
 =========''']
 random_name = ["peach", "apple", "camel","banana", "cherry", "date", "grape", "mango", "orange", "papaya", "watermelon"]
 
@@ -90,16 +89,16 @@ while not gameover:
     if guess not in chosen_word:
         lives -= 1
         if lives == 0:
-            gameover == True
+            gameover = True
             print("You lose")
 
 
 
 
     if "_" not in display:
-        gameover == True
+        gameover = True
         print("You Win!")
 
-
+    print(hangman[lives])
 
     
