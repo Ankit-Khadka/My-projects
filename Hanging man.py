@@ -51,9 +51,17 @@ hangman = ['''
 random_name = ["peach", "apple", "camel","banana", "cherry", "date", "grape", "mango", "orange", "papaya", "watermelon"]
 
 # Randomly choose a word form the wordlist and assaign it a variable called chosen_word and print it
+print("""                                               
+| |                                            
+| |__   __ _ _ __   __ _ _ __ ___   __ _ _ __  
+| '_ \ / _` | '_ \ / _` | '_ ` _ \ / _` | '_ \ 
+| | | | (_| | | | | (_| | | | | | | (_| | | | |
+|_| |_|\__,_|_| |_|\__, |_| |_| |_|\__,_|_| |_|
+                    __/ |                      
+                   |___/           """)
 import random
 chosen_word = random.choice(random_name)
-print(chosen_word)
+# print(chosen_word)
 
 
 #ask the user to guess the letter and assign their guess to variable called guess. make guess lowercase.
@@ -72,6 +80,9 @@ right_letters = []
 while not gameover:
     guess = input("Please choose  words " + place_holder ).lower()
 
+    if guess in right_letters:
+        print(f"You have already guessed {guess} which is in the word! ")
+
     display = ""
     #how to keep track of lives in this game huhhhh howwwwwwwwww
     for letter in chosen_word:    
@@ -87,10 +98,12 @@ while not gameover:
 
     #todo list 2 keep track of lives
     if guess not in chosen_word:
+        print(f"You have guessed {guess} which is not in the word! You have {lives} lives left.  ")
         lives -= 1
         if lives == 0:
             gameover = True
-            print("You lose")
+            print(f"You lose the word was {chosen_word}. Better luck next time!  ")
+
 
 
 
